@@ -18,3 +18,11 @@ npm i -D @babel/core @babel/preset-env babel-loader core-js 6.创建并配置 we
 # package.json 文件配置
 
 看文件吧……懒
+
+# 配置 css 预处理器
+
+npm i -D less less-loader css-loader style-loader
+
+# 配置 postcss 兼容浏览器
+
+npm -D postcss postcss-loader postcss-preset-env
