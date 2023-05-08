@@ -37,7 +37,8 @@ class GameControl {
   run() {
     let X = this.snake.X
     let Y = this.snake.Y
-    // console.log(this.direction);
+    // console.log(X, 'x');
+    // console.log(this.direction, 'this.direction');
     switch (this.direction) {
       case "ArrowUp":
       case "Up":
@@ -59,9 +60,11 @@ class GameControl {
         break;
     }
     try {
+      // console.log(this.snake.X);
       this.snake.X = X
       this.snake.Y = Y
     } catch (e: any) {
+      console.log(1);
       alert(e.message)
       this.isLive = false
     }

@@ -16,17 +16,19 @@ class Snake {
   }
   // 设置蛇头的位置
   set X(value: number) {
+    // console.log(this.X, value - 20);
+    // 至于为什么减20……也许是因为这个蛇头宽高为20导致输出value总比this.X多20，永远都不想等，无法执行下面的逻辑
     this.head.style.left = value + 'px';
-    if (this.X === value) return
-    if (value < 0 || value > 900) {
-      throw new Error('蛇over啦！')
+    if (this.X === value - 20) return;
+    if (value < 0 || value > 750) {
+      throw new Error('蛇撞墙啦！')
     }
   }
   set Y(value: number) {
     this.head.style.top = value + 'px';
-    if (this.Y === value) return
-    if (value < 0 || value > 900) {
-      throw new Error('蛇over啦！')
+    if (this.Y === value - 20) return;
+    if (value < 0 || value > 360) {
+      throw new Error('蛇撞墙啦！')
     }
   }
   // 蛇增加身体的方法
